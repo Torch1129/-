@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1.类型转换</title>
+	</head>
+	<body>
+		<!---->
+		<script type="text/javascript">
+			//类型转换:
+			//1,显示转换(强制类型转换)
+			//string->number
+			var a = "123";
+			var num = Number(a);
+			alert(num);
+			
+			//number->string
+			var b = 100;
+			var str = String(b);
+			alert(typeof(str));
+			
+			var c ="12a";
+			//当字符串中含有非数字的字符时.此时显示转化为number后的值是NaN(Not a Number)
+			
+			alert((Number(c)));
+			
+			//2.隐式转化
+			//+对于字符串.做的是拼接操作
+			//number -> string
+			//当+运算符的两侧,一个是数字,另一个是字符串时.进行的是拼接
+//			var m = 3;
+			/*3 + "a";//"3"+"a"="3a"*/
+//			alert(m+"a");
+            var m = 10;
+            var s = m + "";
+            console.log(typeof(s));
+            
+            //string->number
+            //- * / %运算符时,一侧是数字,另一侧是字符串(纯数字组成),做的是算数运算
+            var x = "123";
+            var y = x - 0;
+            console.log(y);
+            console.log(typeof(y));
+            
+//          parseInt():把字符串中的数字部分提取出来
+/*
+ * 1.从前往后提取,碰到不是数字的字符就停止,不再提取
+ * 2.小数 只提取整数部分,12.3 提取后为12
+ * 3.可以接收第二个参数,指定什么进制来转换,默认为十进制
+ */
+            alert(parseInt("a12.3"));
+            
+            
+//         parseFloat()把字符串中的数字部分提取出来,可以提取整数和小数部分
+            var f = parseFloat("12.5g");
+            console.log(f);
+            
+            //如果提取不出来数字,则返回NaN(是number类型的值,他与其他类型值都不相等,包括他自身)
+            //上述方法提取数字,都会忽略字符串开头和结尾的空格
+            parseInt(" 123 ");
+            alert(parseInt(" 123 "));
+            
+//          isNaN();是否不是一个数字,是不是NaN?
+//12 不是 NaN -> false 12a 是 NaN ->true
+            alert(isNaN("12a"));
+            
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

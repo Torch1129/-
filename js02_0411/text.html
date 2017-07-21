@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1 {
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>第一题</h3>
+		<img src="img/pic_bulboff.gif" />
+		<hr />
+		<h3>第3题</h3>
+		<input type="text" id="r" />
+		<input type="text" id="g" />
+		<input type="text" id="b" />
+		<button id="change">变色</button>
+		<div class="d1"></div>
+
+		<script type="text/javascript">
+			//获取元素
+			var light = document.getElementsByTagName("img")[0];
+			//获取事件
+			light.onclick = function() {
+				light.src = "img/pic_bulbon.gif";
+			};
+
+			//3
+			var rInput = document.getElementById("r");
+			var gInput = document.getElementById("g");
+			var bInput = document.getElementById("b");
+			var changeBtn = document.getElementById("change");
+			var oDiv2 = document.getElementsByClassName("d1")[0];
+			changeBtn.onclick = function() {
+				//获取rgb
+				var r = rInput.value;
+				var g = gInput.value;
+				var b = bInput.value;
+				//修改div的背景色
+				oDiv2.style.backgroundColor =
+
+					"rgb(" + r + "," + g + "," + b + ")";
+
+			};
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3.分支语句</title>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<button id="btn">提交</button>
+		
+		<hr />
+		<input type="" name="" id="" value="" />
+		<button id="tran">翻译</button>
+		<!--程序的结构(执行顺序):
+			  顺序结构:按书写的顺序,从上到下,从左到右,依次执行.
+			  分支结构:按不同的条件执行不同的代码.
+			    if 语句   switch..case
+			  循环结构:只要满足特定条件时,重复执行指定的代码段.
+			
+		-->
+		
+		
+		<script type="text/javascript">
+		  //if 语句:
+		  //第一种形式:
+		     /*若满足条件,则执行其中的代码段
+		      * if(条件表达式){
+		     	//执行的代码段
+		     }*/
+		     var age = 10;
+		     if(age>18){
+		     	console.log("我们约吧");
+		     }
+		     
+		     //第二种形式:
+		    /* 若条件表达式成立,则执行代码段1,若不成立,则执行代码段2.
+		     * if(条件表达式){
+		     	 代码段1
+		     	
+		     }else{
+		     	代码段2
+		     }*/
+		    
+		    if(age>18){
+		    	console.log("我们约吧");
+		    	
+		    } else{
+		    		console.log("我们不约吧");
+		    }
+		    
+		    //第三种形式:(级联式)
+		    /*
+		     * if (条件表达式1) {
+		   	代码段1;
+		   	
+		   } else if(条件表达式2){
+		   	代码段2;
+		   	
+		   } else{
+		   	代码段3;
+		   }
+		     */
+		    
+		    
+		    
+		   var score = 88;
+		   if (score<60) {
+		   	console.log("不及格");
+		   	
+		   } else if(score<80){
+		   	console.log("良好");
+		   	
+		   } else{
+		   	console.log("优秀");
+		   }
+		   //求两个数的较大值
+		   var m = 3, n = 10;
+		   if (m>n) {
+		   	console.log("较大值为"+m);
+		   	
+		   } else{
+		   	console.log("较大值为"+n);
+		   }
+		    var res = m > n ? m : n;
+		    alert(res);
+		   
+		   //求三个数的最大值
+		   //先求两个数的较大者
+//		   var x = 2,y = 4,z = 5;
+//		   var max;
+//		   if (x>y) {
+//		   	max = x;
+//		   } else{
+//		   	max = y;
+//		   }
+//		  max = x > y ? x : y;
+		   //再比较较大者和第三个数的大小
+//		   if (max>z) {
+//		   	max = max;
+//		   	
+//		   } else{
+//		   	max = z;
+//		   }
+//		   max = max > z ? max : z
+		   
+		   //条件运算符:
+		   //表达式1?表达式2:表达式3
+		   //若表达式1成立,则整个式子的值为表达式2的值,否则为表达式3的值
+		   
+		   //若输入的值是m,则输出man;若输入的是g,则输出的是girl;否则.输出other;
+		   
+		   var gender = "m";
+		   if (gender == "m") {
+		   	console.log("man");
+		   	
+		   } else if(gender == "g"){
+		   	console.log("girl");
+		   	
+		   }else{
+		   		console.log("other");
+		   	
+		   }
+		   
+		   //文本输入框,输入一个年份,判断该年是闰年,输出是闰年,否则输出平年
+		   //闰年条件:能被400整除,或者 能被4整除且不能被100整除.
+		   var input1 = document.getElementsByTagName("input")[0];
+		   var btn = document.getElementById("btn");
+		   btn.onclick = function(){
+		   var year = Number(input1.value);
+		   if(year % 400 == 0 || year % 4 == 0 && year != 0){
+		   input1.value += "是闰年";
+		   }else{
+		   	input1.value += "是平年";
+		   }
+		   
+		  };
+		  
+		  
+		 /* switch..case 多分支语句*/
+		/*计算整型表达式的值,和每个case后的值进行匹配,如果相同,就执行对应case里的语句;如果没有匹配
+		 * 到,就执行default分支里的默认语句
+		 * switch (整型表达式){
+			case value(值1):
+			语句1;
+				break;
+				case value(值2):
+			语句2;
+				break;
+				//默认语句
+			default:
+				break;
+		}
+		*/
+		//根据输入的号码,选择对应的服务(0:人工服务 1:充值服务 2:话费查询 3:投诉 其他:无此服务)
+		  
+		  var num = 0;
+		  switch (num){
+		  	case 0:
+		  	alert("人工服务");
+		  	//break 中止 跳出switch语句
+		  		break;
+		  	case 1:
+		  	alert("充值服务");
+		  		break;
+		  	case 2:
+		  	alert("话费查询");
+		  		break;
+		  	case 3:
+		  	alert("投诉");
+		  		break;
+		  	default:
+		  	alert("无此服务");
+		  		break;
+		  }
+		  
+//		  输入框中输入对应英文单词,点击翻译,翻译为对应中文含义
+		  
+		  //spring -- 春天 summer 夏天 autumn 秋天 winter 冬天
+		   var input2 = document.getElementsByTagName("input")[1];
+		   var ibtn = document.getElementById("tran");
+		  ibtn.onclick = function(){
+		   	
+		  
+		  
+		  switch (input2.value){
+		  	case "spring":
+		  	input2.value="春天";
+		  		break;
+		  	case "summer":
+		  	input2.value="夏天";
+		  		break;
+		  	case "autumn":
+		  	input2.value="秋天";
+		  		break;
+		  	case "winter":
+		  	input2.value="春天";
+		  		break;
+		  	default:
+		  	input2.value="无此单词";
+		  		break;
+		  }
+		   
+		 } ;  
+		   
+		   
+		   
+		   
+		    
+		    
+		    
+		    
+		    
+		    
+			
+		</script>
+	</body>
+</html>
